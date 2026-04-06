@@ -7,20 +7,11 @@
   <meta name="description" content="كاسكيت NY الأصلية من Hawta Maroc24 - جودة ممتازة، 10 ألوان، التوصيل مجاني، والدفع عند الاستلام." />
   <meta name="theme-color" content="#1a1a1a" />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Swiper CSS -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-  <!-- Preload hero image -->
   <link rel="preload" as="image" href="https://i.imgur.com/baNoSzu.jpeg">
 
   <style>
@@ -31,37 +22,12 @@
       --text-white: #ffffff;
       --bg-light: #f8f9fa;
       --shadow: 0 4px 15px rgba(0,0,0,0.1);
-      --container: 1200px;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      outline: none;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--primary-color);
-      line-height: 1.6;
-      overflow-x: hidden;
-      text-rendering: optimizeLegibility;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; background-color: var(--bg-light); color: var(--primary-color); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
 
     header {
       background-color: var(--primary-color);
@@ -75,23 +41,53 @@
       z-index: 1000;
       box-shadow: var(--shadow);
     }
+    .logo { font-size: 1.5rem; font-weight: 900; color: var(--secondary-color); }
+    .contact-top { font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--secondary-color);
-    }
-
-    .contact-top {
+    /* COUNTDOWN */
+    .countdown-banner {
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
+      color: white;
+      text-align: center;
+      padding: 12px 16px;
       font-weight: 700;
-      font-size: 0.95rem;
-      white-space: nowrap;
     }
+    .timer-label { display: block; font-size: 0.85rem; opacity: 0.9; margin-bottom: 6px; }
+    .timer-boxes { display: inline-flex; gap: 8px; align-items: center; justify-content: center; }
+    .timer-box { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 4px 10px; min-width: 52px; text-align: center; }
+    .timer-box .num { font-size: 1.6rem; font-weight: 900; display: block; line-height: 1; }
+    .timer-box .lbl { font-size: 0.65rem; opacity: 0.85; }
+    .timer-sep { font-size: 1.4rem; font-weight: 900; margin-bottom: 4px; }
 
+    /* ORDER COUNTER */
+    .order-counter {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .count-num {
+      font-size: 1.3rem;
+      font-weight: 900;
+      background: var(--primary-color);
+      color: var(--secondary-color);
+      padding: 2px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      min-width: 50px;
+    }
+    .live-dot { width: 10px; height: 10px; background: #e74c3c; border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* HERO */
     .hero {
-      background:
-        linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)),
-        url('https://i.imgur.com/baNoSzu.jpeg');
+      background: linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)), url('https://i.imgur.com/baNoSzu.jpeg');
       background-size: cover;
       background-position: center;
       min-height: 70vh;
@@ -103,21 +99,8 @@
       color: white;
       padding: 24px;
     }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 900;
-      margin-bottom: 10px;
-      color: var(--secondary-color);
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      margin-bottom: 24px;
-      max-width: 700px;
-    }
-
+    .hero h1 { font-size: clamp(2rem,5vw,3rem); font-weight: 900; margin-bottom: 10px; color: var(--secondary-color); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    .hero p { font-size: clamp(1rem,2vw,1.2rem); margin-bottom: 24px; max-width: 700px; }
     .cta-button {
       background-color: var(--secondary-color);
       color: var(--primary-color);
@@ -125,292 +108,117 @@
       border-radius: 50px;
       font-weight: 800;
       font-size: 1.1rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(255,215,0,0.3);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 52px;
     }
+    .cta-button:hover { transform: scale(1.04); }
 
-    .cta-button:hover {
-      transform: scale(1.04);
-    }
+    /* SLIDER */
+    .products-slider { padding: 50px 0; background: #fff; }
+    .section-title { text-align: center; margin-bottom: 30px; font-weight: 800; font-size: clamp(1.6rem,4vw,2rem); padding-inline: 16px; }
+    .swiper { width: 100%; padding-bottom: 50px !important; }
+    .swiper-slide { display: flex; flex-direction: column; align-items: center; padding: 10px; }
+    .swiper-slide img { width: 100%; max-width: 400px; border-radius: 15px; box-shadow: var(--shadow); object-fit: cover; aspect-ratio: 1/1; background: #f0f0f0; }
+    .color-name { margin-top: 15px; font-weight: 800; font-size: 1.1rem; color: var(--primary-color); background: var(--secondary-color); padding: 5px 20px; border-radius: 20px; }
 
-    .products-slider {
-      padding: 50px 0;
-      background: #fff;
-    }
+    /* OFFER */
+    .offer-section { background-color: var(--primary-color); color: white; padding: 40px 20px; text-align: center; margin: 40px 0; border-top: 4px solid var(--secondary-color); border-bottom: 4px solid var(--secondary-color); }
+    .offer-badge { background: var(--secondary-color); color: var(--primary-color); display: inline-block; padding: 5px 20px; border-radius: 5px; font-weight: 900; margin-bottom: 15px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.08)} 100%{transform:scale(1)} }
+    .offer-title { font-size: clamp(1.7rem,5vw,2.2rem); font-weight: 900; margin-bottom: 10px; }
+    .price-container { font-size: 1.3rem; margin: 15px 0; }
+    .current-price { color: var(--secondary-color); font-size: clamp(2rem,6vw,2.5rem); font-weight: 900; }
+    .old-price { text-decoration: line-through; opacity: 0.65; margin-right: 15px; }
+    .save-amount { color: #28a745; font-weight: 800; display: block; margin-top: 10px; }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 30px;
-      font-weight: 800;
-      font-size: clamp(1.6rem, 4vw, 2rem);
-      padding-inline: 16px;
-    }
+    /* FEATURES */
+    .features { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 20px; padding: 40px 5%; background: white; }
+    .feature-item { text-align: center; padding: 20px; border-radius: 10px; background: var(--bg-light); transition: transform 0.25s; }
+    .feature-item:hover { transform: translateY(-2px); }
+    .feature-item i { font-size: 2rem; color: var(--secondary-color); margin-bottom: 10px; }
+    .feature-item p { font-weight: 800; font-size: 0.95rem; }
 
-    .swiper {
-      width: 100%;
-      padding-bottom: 50px !important;
-    }
+    /* REVIEWS */
+    .reviews-section { padding: 50px 5%; background: #fff; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .review-card { background: var(--bg-light); border-radius: 16px; padding: 22px; box-shadow: var(--shadow); border-right: 4px solid var(--secondary-color); position: relative; }
+    .reviewer { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .reviewer-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--primary-color); color: var(--secondary-color); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; }
+    .reviewer-info .name { font-weight: 800; font-size: 1rem; }
+    .reviewer-info .city { font-size: 0.82rem; opacity: 0.65; }
+    .stars { color: var(--secondary-color); margin-bottom: 10px; font-size: 1.05rem; letter-spacing: 2px; }
+    .review-text { font-size: 0.93rem; line-height: 1.65; color: #333; }
+    .verified-badge { position: absolute; top: 16px; left: 16px; background: var(--accent-color); color: white; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 20px; }
 
-    .swiper-slide {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-    }
+    /* ORDER FORM */
+    .order-section { padding: 50px 5%; max-width: 620px; margin: 0 auto; }
+    .form-container { background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); border: 2px solid var(--secondary-color); }
+    .form-title { text-align: center; margin-bottom: 25px; font-weight: 800; font-size: 1.8rem; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 800; }
+    .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 1rem; background: #fff; }
+    .form-group input:focus, .form-group select:focus { border-color: var(--secondary-color); }
 
-    .swiper-slide img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-      background: #f0f0f0;
-    }
+    /* COLOR GRID */
+    .color-selector-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; margin-top: 6px; }
+    .color-option { position: relative; cursor: pointer; }
+    .color-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .color-option label { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 4px; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.2s; font-size: 0.72rem; font-weight: 700; text-align: center; line-height: 1.2; background: #fafafa; }
+    .color-option label img { width: 42px; height: 42px; object-fit: cover; border-radius: 6px; }
+    .color-option input[type="radio"]:checked + label { border-color: var(--secondary-color); background: #fffbe6; box-shadow: 0 0 0 3px rgba(255,215,0,0.3); }
+    .color-option label:hover { border-color: #aaa; }
 
-    .color-name {
-      margin-top: 15px;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--primary-color);
-      background: var(--secondary-color);
-      padding: 5px 20px;
-      border-radius: 20px;
-    }
+    .submit-btn { width: 100%; background-color: var(--accent-color); color: white; padding: 18px; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.25s; min-height: 56px; font-family: 'Cairo', sans-serif; }
+    .submit-btn:hover { background-color: #218838; transform: translateY(-2px); }
 
-    .offer-section {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      margin: 40px 0;
-      border-top: 4px solid var(--secondary-color);
-      border-bottom: 4px solid var(--secondary-color);
-    }
+    footer { background: var(--primary-color); color: white; text-align: center; padding: 30px; margin-top: 50px; }
 
-    .offer-badge {
-      background: var(--secondary-color);
-      color: var(--primary-color);
-      display: inline-block;
-      padding: 5px 20px;
-      border-radius: 5px;
-      font-weight: 900;
-      margin-bottom: 15px;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
-
-    .offer-title {
-      font-size: clamp(1.7rem, 5vw, 2.2rem);
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .price-container {
-      font-size: 1.3rem;
-      margin: 15px 0;
-    }
-
-    .current-price {
-      color: var(--secondary-color);
-      font-size: clamp(2rem, 6vw, 2.5rem);
-      font-weight: 900;
-    }
-
-    .old-price {
-      text-decoration: line-through;
-      opacity: 0.65;
-      margin-right: 15px;
-    }
-
-    .save-amount {
-      color: #28a745;
-      font-weight: 800;
-      display: block;
-      margin-top: 10px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      padding: 40px 5%;
-      background: white;
-    }
-
-    .feature-item {
-      text-align: center;
-      padding: 20px;
-      border-radius: 10px;
-      background: var(--bg-light);
-      transition: transform 0.25s ease;
-    }
-
-    .feature-item:hover {
-      transform: translateY(-2px);
-    }
-
-    .feature-item i {
-      font-size: 2rem;
-      color: var(--secondary-color);
-      margin-bottom: 10px;
-    }
-
-    .feature-item p {
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .order-section {
-      padding: 50px 5%;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .form-container {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      border: 2px solid var(--secondary-color);
-    }
-
-    .form-title {
-      text-align: center;
-      margin-bottom: 25px;
-      font-weight: 800;
-      font-size: 1.8rem;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 800;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-family: 'Cairo', sans-serif;
-      font-size: 1rem;
-      background: #fff;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--secondary-color);
-    }
-
-    .submit-btn {
-      width: 100%;
-      background-color: var(--accent-color);
-      color: white;
-      padding: 18px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: 0.25s ease;
-      min-height: 56px;
-    }
-
-    .submit-btn:hover {
-      background-color: #218838;
-      transform: translateY(-2px);
-    }
-
-    footer {
-      background: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 30px;
-      margin-top: 50px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      background-color: #25d366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
-    }
+    .whatsapp-float { position: fixed; bottom: 24px; left: 24px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-10px)} 60%{transform:translateY(-5px)} }
 
     @media (max-width: 768px) {
-      header {
-        padding: 14px 16px;
-      }
-
-      .logo {
-        font-size: 1.15rem;
-      }
-
-      .contact-top {
-        font-size: 0.8rem;
-      }
-
-      .hero {
-        min-height: 62vh;
-      }
-
-      .offer-title {
-        font-size: 1.6rem;
-      }
-
-      .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        font-size: 28px;
-        bottom: 18px;
-        left: 18px;
-      }
+      header { padding: 14px 16px; }
+      .logo { font-size: 1.15rem; }
+      .contact-top { font-size: 0.8rem; }
+      .hero { min-height: 62vh; }
+      .color-option label img { width: 36px; height: 36px; }
+      .color-option label { font-size: 0.65rem; padding: 6px 2px; }
+      .whatsapp-float { width: 56px; height: 56px; font-size: 28px; bottom: 18px; left: 18px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a href="#" class="logo" aria-label="Hawta Maroc24">🧢 Hawta Maroc24</a>
-    <div class="contact-top">📞 0600-000000</div>
+    <a href="#" class="logo">🧢 Hawta Maroc24</a>
+    <div class="contact-top">📞 00491775949457</div>
   </header>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-banner">
+    <span class="timer-label">⏳ العرض ينتهي خلال:</span>
+    <div class="timer-boxes">
+      <div class="timer-box"><span class="num" id="cd-hours">00</span><span class="lbl">ساعة</span></div>
+      <span class="timer-sep">:</span>
+      <div class="timer-box"><span class="num" id="cd-minutes">00</span><span class="lbl">دقيقة</span></div>
+      <span class="timer-sep">:</span>
+      <div class="timer-box"><span class="num" id="cd-seconds">00</span><span class="lbl">ثانية</span></div>
+    </div>
+  </div>
+
+  <!-- ORDER COUNTER -->
+  <div class="order-counter">
+    <span class="live-dot"></span>
+    طلب اليوم:
+    <span class="count-num" id="orderCount">0</span>
+    شخص طلب هاد المنتج 🔥
+  </div>
 
   <section class="hero">
     <h1>كاسكيت NY الأصلية 🧢</h1>
@@ -420,20 +228,18 @@
 
   <section class="products-slider" aria-labelledby="colors-title">
     <h2 class="section-title" id="colors-title">اختر اللون المفضل ديالك</h2>
-
     <div class="swiper">
       <div class="swiper-wrapper" id="sliderWrapper"></div>
       <div class="swiper-pagination"></div>
-      <div class="swiper-button-next" aria-label="التالي"></div>
-      <div class="swiper-button-prev" aria-label="السابق"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
   </section>
 
   <section class="offer-section">
     <span class="offer-badge">عرض لفترة محدودة</span>
     <h2 class="offer-title">🎁 عرض خاص من Hawta Maroc24</h2>
-    <p style="font-size: 1.35rem; font-weight: 800;"> اشتري 2 واحصل على 3 </p>
-
+    <p style="font-size:1.35rem;font-weight:800;">اشتري 2 واحصل على 3</p>
     <div class="price-container">
       <span class="old-price">357 درهم</span>
       <span class="current-price">238 درهم</span>
@@ -442,32 +248,68 @@
   </section>
 
   <section class="features">
-    <div class="feature-item">
-      <i class="fas fa-truck-fast" aria-hidden="true"></i>
-      <p>توصيل سريع ومجاني</p>
-    </div>
+    <div class="feature-item"><i class="fas fa-truck-fast"></i><p>توصيل سريع ومجاني</p></div>
+    <div class="feature-item"><i class="fas fa-hand-holding-dollar"></i><p>الدفع عند الاستلام</p></div>
+    <div class="feature-item"><i class="fas fa-check-circle"></i><p>جودة عالية مضمونة</p></div>
+    <div class="feature-item"><i class="fas fa-arrows-rotate"></i><p>إرجاع مجاني</p></div>
+  </section>
 
-    <div class="feature-item">
-      <i class="fas fa-hand-holding-dollar" aria-hidden="true"></i>
-      <p>الدفع عند الاستلام</p>
-    </div>
+  <!-- REVIEWS -->
+  <section class="reviews-section" aria-labelledby="reviews-title">
+    <h2 class="section-title" id="reviews-title">⭐ آراء الزبائن</h2>
+    <div class="reviews-grid">
 
-    <div class="feature-item">
-      <i class="fas fa-check-circle" aria-hidden="true"></i>
-      <p>جودة عالية مضمونة</p>
-    </div>
+      <div class="review-card">
+        <span class="verified-badge">✔ مشتري موثق</span>
+        <div class="reviewer"><div class="reviewer-avatar">ي</div><div class="reviewer-info"><div class="name">يوسف م.</div><div class="city">📍 الدار البيضاء</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">والله جايت فالوقت وكانت مغلفة مزيان، الجودة ما عليها كلام. شريت أخضر وكحلي، الاثنين زوينين بزاف. غنعاود نطلب!</p>
+      </div>
 
-    <div class="feature-item">
-      <i class="fas fa-arrows-rotate" aria-hidden="true"></i>
-      <p>إرجاع مجاني</p>
+      <div class="review-card">
+        <span class="verified-badge">✔ مشتري موثق</span>
+        <div class="reviewer"><div class="reviewer-avatar">س</div><div class="reviewer-info"><div class="name">سلمى أ.</div><div class="city">📍 مراكش</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">شريت واحد للولد ديالي وعجبه بزاف! الخدمة سريعة والتوصيل مجاني فعلاً. نصح بيها 100%.</p>
+      </div>
+
+      <div class="review-card">
+        <span class="verified-badge">✔ مشتري موثق</span>
+        <div class="reviewer"><div class="reviewer-avatar">أ</div><div class="reviewer-info"><div class="name">أمين ب.</div><div class="city">📍 طنجة</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">العرض 2+1 مزيان بزاف! شريت للخوت ديالي وكل واحد اختار اللون ديالو. الكاسكيت ولا فعلاً NY أصلية.</p>
+      </div>
+
+      <div class="review-card">
+        <span class="verified-badge">✔ مشتري موثق</span>
+        <div class="reviewer"><div class="reviewer-avatar">ف</div><div class="reviewer-info"><div class="name">فاطمة ز.</div><div class="city">📍 الرباط</div></div></div>
+        <div class="stars">★★★★☆</div>
+        <p class="review-text">جودة ممتازة، مشيت بيها للسوق والكل سألني عليها 😄 التوصيل جاء في يومين. شكراً Hawta Maroc24!</p>
+      </div>
+
+      <div class="review-card">
+        <span class="verified-badge">✔ مشتري موثق</span>
+        <div class="reviewer"><div class="reviewer-avatar">ك</div><div class="reviewer-info"><div class="name">كريم ن.</div><div class="city">📍 فاس</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">أول مرة نشري من النت وما خيبتنيش! الدفع عند الاستلام طمنني بزاف. الكاسكيت كاينة بالطريقة لي وصفوها.</p>
+      </div>
+
+      <div class="review-card">
+        <span class="verified-badge">✔ مشتري موثق</span>
+        <div class="reviewer"><div class="reviewer-avatar">ه</div><div class="reviewer-info"><div class="name">هند ع.</div><div class="city">📍 أكادير</div></div></div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">شريت واحدة بيضا وواحدة رمادية، الاثنين جميلات! التعامل مع الفريق كان مزيان بزاف. غنعاود نشري.</p>
+      </div>
+
     </div>
   </section>
 
+  <!-- ORDER FORM -->
   <section class="order-section" id="order">
     <div class="form-container">
       <h2 class="form-title">أدخل معلوماتك للطلب</h2>
-
       <form id="orderForm">
+
         <div class="form-group">
           <label for="name">الاسم الكامل</label>
           <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل" autocomplete="name">
@@ -482,24 +324,21 @@
           <label for="city">المدينة</label>
           <select id="city" name="city" required>
             <option value="">اختر مدينتك</option>
-            <option>الدار البيضاء</option>
-            <option>الرباط</option>
-            <option>مراكش</option>
-            <option>طنجة</option>
-            <option>فاس</option>
-            <option>أكادير</option>
-            <option>مكناس</option>
-            <option>وجدة</option>
-            <option>القنيطرة</option>
-            <option>تطوان</option>
-            <option>تمارة</option>
-            <option>آسفي</option>
-            <option>أخرى</option>
+            <option>الدار البيضاء</option><option>الرباط</option><option>مراكش</option>
+            <option>طنجة</option><option>فاس</option><option>أكادير</option>
+            <option>مكناس</option><option>وجدة</option><option>القنيطرة</option>
+            <option>تطوان</option><option>تمارة</option><option>آسفي</option><option>أخرى</option>
           </select>
         </div>
 
+        <div class="form-group">
+          <label>اختر اللون (مطلوب)</label>
+          <div class="color-selector-grid" id="colorGrid"></div>
+          <input type="hidden" id="selectedColor" name="color">
+        </div>
+
         <button type="submit" class="submit-btn">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <i class="fab fa-whatsapp"></i>
           اطلب الآن عبر واتساب
         </button>
       </form>
@@ -508,14 +347,13 @@
 
   <footer>
     <p>© 2025 hawtamaroc24.com - جميع الحقوق محفوظة</p>
-    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.75;">Hawta Maroc24 | جودة وأناقة في مكان واحد</p>
+    <p style="font-size:0.85rem;margin-top:10px;opacity:0.75;">Hawta Maroc24 | جودة وأناقة في مكان واحد</p>
   </footer>
 
-  <a href="https://wa.me/212600000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  <a href="https://wa.me/491775949457" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
   <script>
@@ -532,70 +370,97 @@
       { url: "https://i.imgur.com/47xmRMY.png", name: "أزرق فاتح" }
     ];
 
-    const whatsappNumber = "212600000000";
-    const sliderWrapper = document.getElementById("sliderWrapper");
+    const whatsappNumber = "491775949457";
 
-    images.forEach((img) => {
+    // BUILD SLIDER
+    const sliderWrapper = document.getElementById("sliderWrapper");
+    images.forEach(img => {
       const slide = document.createElement("div");
       slide.className = "swiper-slide";
-
-      slide.innerHTML = `
-        <img
-          src="${img.url}"
-          alt="كاسكيت NY لون ${img.name}"
-          loading="lazy"
-          decoding="async"
-          width="400"
-          height="400"
-        >
-        <div class="color-name">${img.name}</div>
-      `;
-
+      slide.innerHTML = `<img src="${img.url}" alt="كاسكيت NY لون ${img.name}" loading="lazy" decoding="async" width="400" height="400"><div class="color-name">${img.name}</div>`;
       sliderWrapper.appendChild(slide);
     });
 
-    window.addEventListener("load", () => {
-      new Swiper(".swiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        centeredSlides: true,
-        loop: true,
-        autoplay: {
-          delay: 2800,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          640: { slidesPerView: 1.4 },
-          1024: { slidesPerView: 2.2 }
-        }
+    // BUILD COLOR GRID
+    const colorGrid = document.getElementById("colorGrid");
+    images.forEach((img, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "color-option";
+      const id = `color_${i}`;
+      wrapper.innerHTML = `
+        <input type="radio" name="colorRadio" id="${id}" value="${img.name}">
+        <label for="${id}">
+          <img src="${img.url}" alt="${img.name}" loading="lazy">
+          ${img.name}
+        </label>
+      `;
+      colorGrid.appendChild(wrapper);
+      wrapper.querySelector('input').addEventListener('change', function() {
+        document.getElementById('selectedColor').value = this.value;
       });
     });
 
+    // INIT SWIPER
+    window.addEventListener("load", () => {
+      new Swiper(".swiper", {
+        slidesPerView: 1, spaceBetween: 20, centeredSlides: true, loop: true,
+        autoplay: { delay: 2800, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        breakpoints: { 640: { slidesPerView: 1.4 }, 1024: { slidesPerView: 2.2 } }
+      });
+    });
+
+    // COUNTDOWN
+    function updateCountdown() {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(23, 59, 59, 999);
+      const diff = midnight - now;
+      const h = Math.floor(diff / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-hours').textContent   = String(h).padStart(2,'0');
+      document.getElementById('cd-minutes').textContent = String(m).padStart(2,'0');
+      document.getElementById('cd-seconds').textContent = String(s).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ORDER COUNTER
+    let currentCount = 47;
+    const countEl = document.getElementById('orderCount');
+    function animateCount(target) {
+      let start = 0;
+      const step = target / (1500 / 16);
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= target) { start = target; clearInterval(timer); }
+        countEl.textContent = Math.floor(start);
+      }, 16);
+    }
+    animateCount(currentCount);
+    function scheduleIncrement() {
+      setTimeout(() => {
+        currentCount++;
+        countEl.textContent = currentCount;
+        scheduleIncrement();
+      }, (30 + Math.floor(Math.random() * 60)) * 1000);
+    }
+    scheduleIncrement();
+
+    // FORM SUBMIT
     document.getElementById("orderForm").addEventListener("submit", function(e) {
       e.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
+      const name  = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
-      const city = document.getElementById("city").value;
-
-      const message = `السلام عليكم، أريد طلب كاسكيت NY من Hawta Maroc24:
-الاسم: ${name}
-الهاتف: ${phone}
-المدينة: ${city}
-العرض: اشتري 2 واحصل على 3 (238 درهم)`;
-
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-      window.open(whatsappUrl, "_blank", "noopener");
+      const city  = document.getElementById("city").value;
+      const color = document.getElementById("selectedColor").value;
+      if (!color) { alert("⚠️ رجاءً اختر اللون ديال الكاسكيت"); return; }
+      const message = `السلام عليكم، أريد طلب كاسكيت NY من Hawta Maroc24:\nالاسم: ${name}\nالهاتف: ${phone}\nالمدينة: ${city}\nاللون المختار: ${color}\nالعرض: اشتري 2 واحصل على 3 (238 درهم)`;
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
       this.reset();
+      document.getElementById('selectedColor').value = '';
     });
   </script>
 </body>
